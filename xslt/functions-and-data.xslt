@@ -158,6 +158,8 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted gc n2016 n2021 pin
 	</lots>
 </xsl:variable>
 
+  <xsl:variable name="ted-publication-date" select="/*/ted:CODED_DATA_SECTION/ted:REF_OJS/ted:DATE_PUB"/>
+
 <!-- #### GLOBAL FUNCTIONS #### -->
 
 <!-- Function opfun:get-eforms-language converts a language code from TED two-letter format to eForms three-letter format -->

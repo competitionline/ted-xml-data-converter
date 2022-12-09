@@ -222,15 +222,15 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted gc n2016 n2021 pin
 		<!-- Notice Publication Identifier (OPP-010): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Publication Identifier (OPP-010)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:NoticePublicationID schemeName="ojs-notice-id">12345678-2023</efbc:NoticePublicationID>
+		<efbc:NoticePublicationID schemeName="ojs-notice-id"><xsl:value-of select="//@DOC_ID"/></efbc:NoticePublicationID>
 		<!-- OJEU Identifier (OPP-011): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Identifier (OPP-011)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:GazetteID schemeName="ojs-id">123/2023</efbc:GazetteID>
+		<efbc:GazetteID schemeName="ojs-id"><xsl:value-of select="replace(//@EDITION,'([0-9]{4})([0-9]{3})','$2/$1')"/></efbc:GazetteID>
 		<!-- OJEU Publication Date (OPP-012): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Publication Date (OPP-012)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:PublicationDate>2023-03-14+01:00</efbc:PublicationDate>
+		<efbc:PublicationDate><xsl:value-of select="replace($ted-publication-date,'([0-9]{4})([0-9]{2})([0-9]{2})','$1-$2-$3 +01:00')"/></efbc:PublicationDate>
 	</efac:Publication>
 </xsl:template>
 
