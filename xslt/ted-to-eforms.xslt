@@ -266,7 +266,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<!-- Notice Publication Identifier (OPP-010): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Publication Identifier (OPP-010)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:NoticePublicationID schemeName="ojs-notice-id">12345678-2023</efbc:NoticePublicationID>
+		<efbc:NoticePublicationID schemeName="ojs-notice-id"><xsl:value-of select="//@DOC_ID"/></efbc:NoticePublicationID>
 		<!-- OJEU Identifier (OPP-011): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Identifier (OPP-011)'"/></xsl:call-template>
 		<efbc:GazetteID schemeName="ojs-id"><xsl:value-of select="fn:concat($ojs, '/', substring($pubdate, 1,4))"/></efbc:GazetteID>
