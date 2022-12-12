@@ -230,7 +230,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted gc n2016 n2021 pin
 		<!-- OJEU Publication Date (OPP-012): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Publication Date (OPP-012)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:PublicationDate><xsl:value-of select="replace($ted-publication-date,'([0-9]{4})([0-9]{2})([0-9]{2})','$1-$2-$3 +01:00')"/></efbc:PublicationDate>
+		<efbc:PublicationDate><xsl:value-of select="replace($ted-publication-date,'([0-9]{4})([0-9]{2})([0-9]{2})','$1-$2-$3+01:00')"/></efbc:PublicationDate>
 	</efac:Publication>
 </xsl:template>
 
